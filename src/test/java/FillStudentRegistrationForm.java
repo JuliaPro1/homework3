@@ -17,7 +17,6 @@ public class FillStudentRegistrationForm {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
-
     }
 
     @Test
@@ -60,12 +59,6 @@ public class FillStudentRegistrationForm {
         $$(".table-responsive").findBy(text("Picture")).shouldHave(text("photo.jpg"));
         $$(".table-responsive").findBy(text("Address")).shouldHave(text("New street 1"));
         $$(".table-responsive").findBy(text("State and City")).shouldHave(text("Uttar Pradesh Lucknow"));
-
-
-
-
-
-
 
     }
 }
