@@ -50,9 +50,6 @@ public class FillStudentRegistrationForm {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Lucknow")).click();
 
-        //$("#react-select-3-option-1").click();
-        //
-        //$("#react-select-4-option-1").click();
         $("#submit").click();
 
 
