@@ -16,7 +16,7 @@ public class FillStudentRegistrationForm {
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
     }
 
     @Test
@@ -26,7 +26,7 @@ public class FillStudentRegistrationForm {
         $("#firstName").setValue("Julia");
         $("#lastName").setValue("Amel");
         $("#userEmail").setValue("amel@car.ca");
-        $("#gender-radio-2 + label").click();
+        $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue("89804561456");
 
         $("#dateOfBirthInput").click();
@@ -37,14 +37,22 @@ public class FillStudentRegistrationForm {
         $("#subjectsInput").setValue("Maths");
         $(".subjects-auto-complete__option").shouldBe(Condition.visible);
         $(".subjects-auto-complete__option").click();
-        $("#hobbies-checkbox-2 + label").click();
-        $("#hobbies-checkbox-3 + label").click();
+
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
+
         $("#uploadPicture").uploadFromClasspath("photo.jpg");
+
         $("#currentAddress").setValue("New street 1");
+
         $("#state").click();
-        $("#react-select-3-option-1").click();
+        $("#stateCity-wrapper").$(byText("Uttar Pradesh")).click();
         $("#city").click();
-        $("#react-select-4-option-1").click();
+        $("#stateCity-wrapper").$(byText("Lucknow")).click();
+
+        //$("#react-select-3-option-1").click();
+        //
+        //$("#react-select-4-option-1").click();
         $("#submit").click();
 
 
